@@ -1,0 +1,136 @@
+html, body{
+  margin: 0;
+  padding: 0;
+}
+#upper-bar{
+  height: 30px;
+  background: gray;
+}
+#navi-bar{
+  height: 30px;
+  background: whitesmoke;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top:5px;
+}
+#login{
+  display: inline;
+  float: right;
+}
+#content{
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 95px);
+}
+#content-left{
+  position: absolute;
+  float:left;
+  width:350px;
+  height: 100%;
+  background: gray;
+  text-align: center;
+  padding-top: 20px;
+}
+#content-left .board-list{
+  margin-bottom: 20px;
+}
+#content-right{
+  position: absolute;
+  right: 0px;
+  left: 350px;
+  float:left;
+  padding-top: 20px;
+  padding-left: 10px;
+  overflow: auto;
+}
+#under-bar{
+  background-color: whitesmoke;
+  text-align: center;
+  position: fixed;
+  height: 30px;
+  width: 100%;
+  bottom: 0px;
+}
+#title{
+  font-size:25px;
+}
+.post{
+  height: 250px;
+  margin: 30px 10px;
+}
+.post-info-bar{
+  height: 35px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: skyblue;
+}
+.post-body{
+  height: 180px;
+  background-color: whitesmoke;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.post-control{
+  height: 25px;
+  text-align: right;
+  border-bottom: 1px solid black;
+  background-color: whitesmoke;
+}
+.post-name{
+  font-size:20px;
+}
+#config-table{
+  margin-top:30px;
+  margin-bottom: 30px;
+  width: 99%;
+  border-top: 1px solid #444444;
+  border-collapse: collapse;
+}
+#config-table th, #config-table td{
+  text-align: center;
+  border-bottom: 1px solid #444444;
+  padding: 10px;
+}
+#bbs-input{
+  margin-top: 30px;
+  border-bottom: 1px solid gray;
+}
+.input-info{
+  padding: 10px;
+  border-top: 1px solid gray;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#search{
+  float:right;
+  margin-right: 20px;
+}
+.thumbnail{
+  background-color:gray;
+  margin:5px;
+  width:350px;
+  height:180px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  float:left;
+  border-radius: 10%;
+}
+.post-view{
+  margin: 30px 10px;
+  height: 1000px;
+}
+.post-view-body{
+  height: 800px;
+  background-color: whitesmoke;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.post-view-control{
+  height: 25px;
+  text-align: right;
+  border-bottom: 1px solid black;
+  background-color: whitesmoke;
+}
