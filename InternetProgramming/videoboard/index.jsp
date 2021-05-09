@@ -1,87 +1,89 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>ë™ì˜ìƒ ê´€ë¦¬ ê²Œì‹œíŒ</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="EUC-KR">
+    <title>µ¿¿µ»ó °ü¸® °Ô½ÃÆÇ</title>
+    <link rel="stylesheet" href="./css/style.css">
   </head>
-  <body>
-  <div id="upper-bar"></div>
+<body>
+	  <div id="upper-bar"></div>
   <div id="navi-bar">
-    <a href="index.html">í™ˆ</a> | ì „ì²´ê¸€ë³´ê¸°(í˜¹ì€ í˜„ì¬ ê²Œì‹œíŒ ì´ë¦„)
+    <a href="index.jsp">È¨</a> | ÀüÃ¼±Ûº¸±â(È¤Àº ÇöÀç °Ô½ÃÆÇ ÀÌ¸§)
     <form id="login" action="..." accept-charset="utf-8" method="post">
       ID : <input type="text" name="id">
       PW : <input type="password" name="pw">
-      <input type="submit" value="ì¸ì¦">
+      <input type="submit" value="ÀÎÁõ">
     </form>
   </div>
   <div id="content">
     <div id="content-left">
-      <div class="board-list"><a href="index.html"><strong>#ì „ì²´ ê²Œì‹œê¸€ ë³´ê¸°</strong></a></div>
-      <div class="board-list"><a href="board1.html">#ê²Œì‹œíŒ1</a></div>
-      <div class="board-list"><a href="board2.html">#ê²Œì‹œíŒ2</a></div>
-      <div class="board-list"><a href="board3.html">#ê²Œì‹œíŒ3</a></div>
+      <div class="board-list"><a href="index.jsp"><strong>#ÀüÃ¼ °Ô½Ã±Û º¸±â</strong></a></div>
+      <div class="board-list"><a href="board1.jsp">#°Ô½ÃÆÇ1</a></div>
+      <div class="board-list"><a href="board2.jsp">#°Ô½ÃÆÇ2</a></div>
+      <div class="board-list"><a href="board3.jsp">#°Ô½ÃÆÇ3</a></div>
     </div>
     <div id="content-right">
-      <span id="title"><strong>í˜„ì¬ ê²Œì‹œíŒëª…</strong></span> <a href="write.html">#ê¸€ì“°ê¸°</a>
+      <span id="title"><strong>ÇöÀç °Ô½ÃÆÇ¸í</strong></span> <a href="write.jsp">#±Û¾²±â</a>
       <span id="search">
-        <input type="text" placeholder="ê²€ìƒ‰ì–´">
-        <input type="button" value="ê²€ìƒ‰">
+        <input type="text" placeholder="°Ë»ö¾î">
+        <input type="button" value="°Ë»ö">
       </span>
       <div class="post">
         <div class="post-info-bar">
-          <span class="post-name"><strong>ê¸€ ì œëª©</strong></span> | <span class="post-info">ì‘ì„±ì | 00-00-00</span>
+          <span class="post-name"><strong>±Û Á¦¸ñ</strong></span> | <span class="post-info">ÀÛ¼ºÀÚ | 00-00-00</span>
         </div>
         <div class="post-body">
-          <div class="thumbnail"><a href="view.html" style="margin: 50px">ì¸ë„¤ì¼(í´ë¦­ì‹œ ìƒì„¸ì¡°íšŒ)</a></div>
+          <div class="thumbnail"><a href="view.jsp" style="margin: 50px">½æ³×ÀÏ(Å¬¸¯½Ã »ó¼¼Á¶È¸)</a></div>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ....
         </div>
         <div class="post-control">
-          ë¹„ë°€ë²ˆí˜¸ : <input type="password">
-          <a href="update.html">ìˆ˜ì •</a> | <a href="delete.html">ì‚­ì œ</a>
+          ºñ¹Ğ¹øÈ£ : <input type="password">
+          <a href="update.jsp">¼öÁ¤</a> | <a href="delete.jsp">»èÁ¦</a>
         </div>
       </div>
       <div class="post">
         <div class="post-info-bar">
-          <span class="post-name"><strong>ê¸€ ì œëª©</strong></span> | <span class="post-info">ì‘ì„±ì | 00-00-00</span>
+          <span class="post-name"><strong>±Û Á¦¸ñ</strong></span> | <span class="post-info">ÀÛ¼ºÀÚ | 00-00-00</span>
         </div>
         <div class="post-body">
-          <div class="thumbnail"><a href="view.html" style="margin: 50px">ì¸ë„¤ì¼(í´ë¦­ì‹œ ìƒì„¸ì¡°íšŒ)</a></div>
+          <div class="thumbnail"><a href="view.jsp" style="margin: 50px">½æ³×ÀÏ(Å¬¸¯½Ã »ó¼¼Á¶È¸)</a></div>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ....
         </div>
         <div class="post-control">
-          ë¹„ë°€ë²ˆí˜¸ : <input type="password">
-          <a href="update.html">ìˆ˜ì •</a> | <a href="delete.html">ì‚­ì œ</a>
+          ºñ¹Ğ¹øÈ£ : <input type="password">
+          <a href="update.jsp">¼öÁ¤</a> | <a href="delete.jsp">»èÁ¦</a>
         </div>
       </div>
       <div class="post">
         <div class="post-info-bar">
-          <span class="post-name"><strong>ê¸€ ì œëª©</strong></span> | <span class="post-info">ì‘ì„±ì | 00-00-00</span>
+          <span class="post-name"><strong>±Û Á¦¸ñ</strong></span> | <span class="post-info">ÀÛ¼ºÀÚ | 00-00-00</span>
         </div>
         <div class="post-body">
-          <div class="thumbnail"><a href="view.html" style="margin: 50px">ì¸ë„¤ì¼(í´ë¦­ì‹œ ìƒì„¸ì¡°íšŒ)</a></div>
+          <div class="thumbnail"><a href="view.jsp" style="margin: 50px">½æ³×ÀÏ(Å¬¸¯½Ã »ó¼¼Á¶È¸)</a></div>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ....
         </div>
         <div class="post-control">
-          ë¹„ë°€ë²ˆí˜¸ : <input type="password">
-          <a href="update.html">ìˆ˜ì •</a> | <a href="delete.html">ì‚­ì œ</a>
+          ºñ¹Ğ¹øÈ£ : <input type="password">
+          <a href="update.jsp">¼öÁ¤</a> | <a href="delete.jsp">»èÁ¦</a>
         </div>
       </div>
       <div class="post">
         <div class="post-info-bar">
-          <span class="post-name"><strong>ê¸€ ì œëª©</strong></span> | <span class="post-info">ì‘ì„±ì | 00-00-00</span>
+          <span class="post-name"><strong>±Û Á¦¸ñ</strong></span> | <span class="post-info">ÀÛ¼ºÀÚ | 00-00-00</span>
         </div>
         <div class="post-body">
-          <div class="thumbnail"><a href="view.html" style="margin: 50px">ì¸ë„¤ì¼(í´ë¦­ì‹œ ìƒì„¸ì¡°íšŒ)</a></div>
+          <div class="thumbnail"><a href="view.jsp" style="margin: 50px">½æ³×ÀÏ(Å¬¸¯½Ã »ó¼¼Á¶È¸)</a></div>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ....
         </div>
         <div class="post-control">
-          ë¹„ë°€ë²ˆí˜¸ : <input type="password">
-          <a href="update.html">ìˆ˜ì •</a> | <a href="delete.html">ì‚­ì œ</a>
+          ºñ¹Ğ¹øÈ£ : <input type="password">
+          <a href="update.jsp">¼öÁ¤</a> | <a href="delete.jsp">»èÁ¦</a>
         </div>
       </div>
     </div>
   </div>
-  <div id="under-bar">ì¸í„°ë„· í”„ë¡œê·¸ë˜ë° ë™ì˜ìƒ ê´€ë¦¬ ê²Œì‹œíŒ</div>
-  </body>
+  <div id="under-bar">ÀÎÅÍ³İ ÇÁ·Î±×·¡¹Ö µ¿¿µ»ó °ü¸® °Ô½ÃÆÇ</div>
+</body>
 </html>
