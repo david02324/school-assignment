@@ -26,7 +26,6 @@
     </div>
     <div id="content-right">
       <span id="title"><strong>글쓰기</strong></span>
-      <!-- 원래 POST요청으로 DB에 반영후 상세조회 페이지로 redirect 해야하지만 현재 DB까지 진도가 안나가서 그냥 상세 조회 페이지로 정보를 넘겼습니다 -->
       <form id="bbs-input" action="view.jsp" method="post">
         <div class="input-info">
           글제목 : <input type="text" name="name" size="50">

@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="EUC-KR" import="post.Post"%>
+<%
+	request.setCharacterEncoding("EUC-KR");
+	String name = request.getParameter("name");
+	String author = request.getParameter("author");
+	String disc = request.getParameter("disc");
+	
+	Post newPost = new Post(name,author,disc);
+%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,12 +16,6 @@
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-  <% 
-	request.setCharacterEncoding("EUC-KR");
-	String name = request.getParameter("name");
-	String author = request.getParameter("author");
-	String disc = request.getParameter("disc");
-  %>
   <div id="upper-bar"></div>
   <div id="navi-bar">
     <a href="index.jsp">홈</a> | 전체글보기(혹은 현재 게시판 이름)
@@ -34,12 +36,12 @@
       <span id="title"><strong>글 조회</strong></span>
       <div class="post-view">
         <div class="post-info-bar">
-          <span class="post-name"><strong><%=name%></strong></span> | <span class="post-info"><%=author%> | 00-00-00</span>
+          <span class="post-name"><strong><%=newPost.getName()%></strong></span> | <span class="post-info"><%=newPost.getAuthor()%> | 00-00-00</span>
         </div>
         <div class="post-view-body">
           <div class="thumbnail"><span style="margin: 50px">동영상</span></div>
           <div class="post-content">
-            <%=disc%>
+            <%=newPost.getDisc()%>
           </div>
         </div>
         <div class="post-view-control">

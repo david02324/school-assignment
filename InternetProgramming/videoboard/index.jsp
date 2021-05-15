@@ -36,7 +36,7 @@
         </div>
         <div class="post-body">
           <div class="thumbnail"><a href="view.jsp" style="margin: 50px">썸네일(클릭시 상세조회)</a></div>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ....
+          글쓰기를 클릭한 후 글을 작성하면 빈즈 객체에 name,author,disc 데이터가 넘어가고 get메서드를 통해서 조회가 가능합니다.
         </div>
         <div class="post-control">
           비밀번호 : <input type="password">
