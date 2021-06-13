@@ -1,10 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR" import="DB.VideoRepo,DB.Video,java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8" import="DB.VideoRepo,DB.Video,java.util.ArrayList,java.net.URLDecoder"%>
 <%
 	request.setCharacterEncoding("utf-8");
 	
 	VideoRepo videoRepo = new VideoRepo();
-	ArrayList<Video> videoList = videoRepo.getVideoList();
+	ArrayList<Video> videoList = null;
+	
+	String keyword = request.getParameter("keyword");
+	if (keyword == null){
+		videoList = videoRepo.getVideoList();
+	} else {
+		String mode = request.getParameter("mode");
+		if (mode.equals("ì œëª©")){
+			videoList = videoRepo.searchVideoByTitle(keyword);
+		} else if (mode.equals("ë‚´ìš©")){
+			videoList = videoRepo.searchVideoByDesc(keyword);
+		}
+	}
 	
 	videoRepo.close();
 %>
@@ -13,17 +25,24 @@
   <head>
     <meta charset="EUC-KR">
     <title>Video Board</title>
+    <link rel="stylesheet" href="./static/bootstrap.min.css">
     <link rel="stylesheet" href="./static/style.css">
   </head>
 <body>
 	  <div id="upper-bar">
 	  	<a href="index.jsp" id="title">Video Board</a>
-	  	<a href="write.jsp" id="button-write">¾÷·Îµå</a>
+	  	<a href="write.jsp"><img src="./static/upload_icon.png" id="button-write" height="43px"/></a>
 	  </div>
   <div id="navi-bar">
     <div id="search">
-        <input type="text" placeholder="°Ë»ö¾î">
-        <input type="button" value="°Ë»ö">
+    	<form action="index.jsp" method="GET">
+    		<select class="form-control" id="search-mode" name="mode">
+			  <option>ì œëª©</option>
+			  <option>ë‚´ìš©</option>
+			</select>
+    		<input id="search-input" type="text" name="keyword" placeholder="ê²€ìƒ‰ì–´">
+        	<input id="search-button" class="btn btn-info" type="submit" value="ê²€ìƒ‰">
+    	</form>
     </div>
   </div>
   <div id="content">
@@ -41,6 +60,8 @@
       </div>
      <% } %>
   </div>
-  <div id="under-bar">ÀÎÅÍ³İ ÇÁ·Î±×·¡¹Ö µ¿¿µ»ó °ü¸® °Ô½ÃÆÇ</div>
+  <div id="under-bar">ì¸í„°ë„· í”„ë¡œê·¸ë˜ë° ë™ì˜ìƒ ê´€ë¦¬ ê²Œì‹œíŒ</div>
 </body>
+<script type="text/javascript" src="./static/jquery.js"></script>
+<script type="text/javascript" src="./static/bootstrap.min.js"></script>
 </html>

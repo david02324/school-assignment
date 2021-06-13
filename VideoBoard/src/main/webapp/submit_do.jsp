@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=utf-8" 
 	import="com.oreilly.servlet.*, com.oreilly.servlet.multipart.*"
-	import="java.io.*, DB.Video, DB.VideoRepo" 
+	import="java.io.*, DB.Video, DB.VideoRepo, java.io.File" 
 %>
 <%
 request.setCharacterEncoding("utf-8");
@@ -17,6 +17,8 @@ if (!folder.exists()){
 	folder.mkdir();
 }
 
+int redirectId = 0;
+
 try {
 	MultipartRequest multi = new MultipartRequest(request, realFolder, 
 												maxsize, "euc-kr",
@@ -31,12 +33,27 @@ try {
 	video.setPassword(multi.getParameter("password"));
 	
 	VideoRepo repo = new VideoRepo();
-	repo.insertVideo(video);
+	if (multi.getParameter("id") != null){
+		int id = Integer.parseInt(multi.getParameter("id"));
+		Video oldVideo = repo.selectOneVideoById(id);
+	
+		File videoFile = new File(realFolder+"/"+oldVideo.getVideo());
+		File thumbnailFile = new File(realFolder+"/"+oldVideo.getThumbnail());
+		
+		videoFile.delete();
+		thumbnailFile.delete();
+		
+		video.setId(id);
+		repo.updateVideo(video);
+		redirectId = id;
+	} else {
+		redirectId = repo.insertVideo(video);
+	}
 	
 	repo.close();
 } catch(IOException e) { 
 	out.println("파일 전송 오류 : " + e);
 }
 
-response.sendRedirect("index.jsp");
+response.sendRedirect("view.jsp?id="+redirectId);
 %>

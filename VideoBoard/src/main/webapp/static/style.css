@@ -16,13 +16,13 @@ body {
 	flex-direction: column;
 }
 
-a {
+#title {
 	text-decoration: none;
 	color: #000000;
 }
 
 #upper-bar {
-	min-height: 38px;
+	min-height: 52px;
 	background: gray;
 	padding: 7px 15px;
 	display: fixed;
@@ -35,7 +35,26 @@ a {
 	display: table;
 	margin: 0 auto;
 }
-
+#search-input{
+	font-size: 15px;
+	border: none;
+	border-bottom: 1px solid gray;
+	background: whitesmoke;
+}
+#search-mode{
+	width: 80px;
+	margin:0;
+	padding: 0px 12px;
+	height: 25px;
+	margin-top: 3px;
+}
+#search-button, #search-input, #search-mode{
+	display: inline;
+}
+#search-button, #update-button, #delete-button{
+	height: 25px;
+	padding: 1px 4px;
+}
 #navi-bar {
 	min-height: 30px;
 	background: whitesmoke;
@@ -75,6 +94,7 @@ a {
 }
 #content-view-inner hr{
 	margin: 0;
+	border:1px solid gray;
 }
 
 #content-view-inner::-webkit-scrollbar {
@@ -181,7 +201,6 @@ a {
 #write-desc{
 	resize:none;
 	border:none;
-	border-bottom: 1px solid gray;
 	width:calc(100% - 4px);
 	height: 300px;
 	padding:2px;
@@ -200,6 +219,9 @@ a {
 	border: none;
 	border-bottom: 1px solid gray;
 	font-size: 15px;
+}
+#write-cancel{
+	margin-left: 15px;
 }
 #write-submit{
 	margin-left: 15px;

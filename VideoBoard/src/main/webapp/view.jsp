@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR" import="DB.Video, DB.VideoRepo"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8" import="DB.Video, DB.VideoRepo"%>
 <%
 	request.setCharacterEncoding("utf-8");
 	
@@ -11,8 +11,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="EUC-KR">
+    <meta charset="utf-8">
     <title><%=video.getTitle()%> - Video Board</title>
+    <link rel="stylesheet" href="./static/bootstrap.min.css">
     <link rel="stylesheet" href="./static/style.css">
   </head>
 <body>
@@ -23,22 +24,26 @@
   	<div id="content-view-inner">
   	  <div id="video-wrap">
 	  <video src="<%="./upload/"+video.getVideo()%>" controls autoplay>
-		ÀÌ ºê¶ó¿ìÀú´Â Áö¿øÇÏÁö ¾Ê½À´Ï´Ù.
+		ì´ ë¸Œë¼ìš°ì €ëŠ” ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
 	  </video>
   	  </div>
   	  <div id="video-info">
   		<div id="video-title"><%=video.getTitle()%></div>
   		<span id="video-author"><%=video.getAuthor()%></span>
   		<span id="video-date" style="float:right"><%=video.getDate()%></span>
-  		<form action="" method="POST">
-  			<input type="password" id="write-password" placeholder="ºñ¹Ð¹øÈ£">
-  			<input type="submit" value="¼öÁ¤" formaction="">
-			<input type="submit" value="»èÁ¦" formaction="">
+  		<form method="POST" id="delete-or-update-form">
+  			<input type="hidden" name="id" value="<%=video.getId()%>">
+  			<input type="password" name="password" style="margin-left:0px; margin-top:10px" id="write-password" placeholder="ë¹„ë°€ë²ˆí˜¸">
+  			<input type="button" value="ìˆ˜ì •" id="update-button" class="btn btn-info" onclick="update()">
+			<input type="button" value="ì‚­ì œ" id="delete-button" class="btn btn-danger" onclick="del()">
   		</form>
   		<p style="margin-top:30px"><%=video.getDesc()%></p>
   	  </div>
   	</div>
   </div>
-  <div id="under-bar">ÀÎÅÍ³Ý ÇÁ·Î±×·¡¹Ö µ¿¿µ»ó °ü¸® °Ô½ÃÆÇ</div>
+  <div id="under-bar">ì¸í„°ë„· í”„ë¡œê·¸ëž˜ë° ë™ì˜ìƒ ê´€ë¦¬ ê²Œì‹œíŒ</div>
 </body>
+<script type="text/javascript" src="./static/jquery.js"></script>
+<script type="text/javascript" src="./static/bootstrap.min.js"></script>
+<script type="text/javascript" src="./static/deleteOrUpdate.js"></script>
 </html>
