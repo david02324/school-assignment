@@ -4,6 +4,7 @@
 	request.setCharacterEncoding("utf-8");
 	
 	VideoRepo videoRepo = new VideoRepo();
+	// 글 정보 조회
 	Video video = videoRepo.selectOneVideoById(Integer.parseInt(request.getParameter("id")));
 	
 	videoRepo.close();
@@ -39,6 +40,24 @@
   		</form>
   		<p style="margin-top:30px"><%=video.getDesc()%></p>
   	  </div>
+  	  <div id="comment">
+  	  	<span id="comment-title">댓글</span>
+  		<hr>
+  		<div id="comment-write-form">
+  			<input type="hidden" id="videoId" value="<%=video.getId()%>">
+			<div id="comment-write-info">
+				<input type="text" id="comment-write-author" placeholder="작성자" value="익명">
+				<hr>
+				<input type="password" id="comment-write-password" placeholder="비밀번호">
+			</div>
+			<div id="comment-write-content">
+				<textarea id="comment-write-desc"></textarea>
+			</div>
+			<input type="button" id="comment-submit-button" class="btn btn-info" value="작성" onclick="commentSubmit()"> 
+  		</div>
+  		<hr>
+  		<div id="comment-list"></div>
+  	  </div>
   	</div>
   </div>
   <div id="under-bar">인터넷 프로그래밍 동영상 관리 게시판</div>
@@ -46,4 +65,5 @@
 <script type="text/javascript" src="./static/jquery.js"></script>
 <script type="text/javascript" src="./static/bootstrap.min.js"></script>
 <script type="text/javascript" src="./static/deleteOrUpdate.js"></script>
+<script type="text/javascript" src="./static/comment.js"></script>
 </html>

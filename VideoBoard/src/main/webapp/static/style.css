@@ -139,6 +139,7 @@ body {
 	margin: 30px 10px;
 	display: flex;
 	flex-direction: column;
+	cursor: pointer;
 }
 
 .post-thumbnail {
@@ -225,4 +226,48 @@ body {
 }
 #write-submit{
 	margin-left: 15px;
+}
+#comment-title{
+	font-size: 20px;
+}
+#comment-write-info{
+	float:left;
+	width: 20%;
+	border-right: 2px solid gray;
+}
+#comment-write-content{
+	float:left;
+	width: calc(80% - 50px);
+}
+#comment-write-author, #comment-write-password{
+	border: none;
+	width: 100%;
+}
+#comment-write-desc{
+	border:none;
+	width: 100%;
+	resize: none;
+}
+#comment-submit-button{
+	float:right;
+	width: 50px;
+	height: 48px;
+	resize: none;
+}
+#comment{
+	margin-top: 30px;
+}
+#comment-box{
+	margin: 20px auto;
+}
+#comment-box hr{
+	border-top: 1px solid whitesmoke;
+}
+#comment-author{
+	font-weight: bold;
+	font-size: 20px;
+}
+#comment-delete-button{
+	float: right;
+	cursor: pointer;
 }

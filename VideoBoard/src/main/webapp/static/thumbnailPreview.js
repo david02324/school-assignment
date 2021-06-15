@@ -1,3 +1,4 @@
+// 썸네일 이미지 변경시 미리보기 이미지 변경
 function readImage(input) {
     // 인풋 태그에 파일이 있는 경우
     if(input.files && input.files[0]) {

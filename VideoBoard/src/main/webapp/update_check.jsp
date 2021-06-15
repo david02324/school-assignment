@@ -5,12 +5,15 @@
 <script>
 <%
 	request.setCharacterEncoding("utf-8");
-
+	
+	// 수정할 글의 ID
 	int id = Integer.parseInt(request.getParameter("id"));
+	// 유저가 입력한 password
 	String password = request.getParameter("password");
 	VideoRepo repo = new VideoRepo();
-	if(repo.passwordCheck(id, password)){
+	if(repo.passwordCheck(id, password)){	// 비밀번호 일치 여부 확인
 		%> 
+			// javascript로 form 만들어 전송
 			var form = document.createElement("form");
 		    form.setAttribute("method", "POST");
 		    form.setAttribute("action", "update.jsp");

@@ -7,9 +7,9 @@
 	ArrayList<Video> videoList = null;
 	
 	String keyword = request.getParameter("keyword");
-	if (keyword == null){
+	if (keyword == null){	// 키워드가 없을 경우 전체 동영상 조회
 		videoList = videoRepo.getVideoList();
-	} else {
+	} else {	// 키워드 존재 시 검색결과 조회
 		String mode = request.getParameter("mode");
 		if (mode.equals("제목")){
 			videoList = videoRepo.searchVideoByTitle(keyword);
@@ -47,7 +47,7 @@
   </div>
   <div id="content">
   	<% for (Video video : videoList) { %>
-      <div class="post" style="cursor: pointer;" onclick="location.href='view.jsp?id=<%=video.getId()%>'">
+      <div class="post" onclick="location.href='view.jsp?id=<%=video.getId()%>'">
       	<div class="post-thumbnail">
       		<img src="<%="./upload/" + video.getThumbnail()%>" width="360" height="202">
       	</div>

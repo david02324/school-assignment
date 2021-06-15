@@ -7,16 +7,21 @@
 	int id = Integer.parseInt(request.getParameter("id"));
 	String password = request.getParameter("password");
 	VideoRepo repo = new VideoRepo();
-	if(repo.passwordCheck(id, password)){
+	
+	if(repo.passwordCheck(id, password)){	// 비밀번호 체크
 		Video video = repo.selectOneVideoById(id);
 		ServletContext context = getServletContext();
 		String realFolder = context.getRealPath("upload");
 		
+		// 기존 비디오, 썸네일 경로
 		File videoFile = new File(realFolder+"/"+video.getVideo());
 		File thumbnailFile = new File(realFolder+"/"+video.getThumbnail());
 		
+		// 기존 비디오 썸네일 삭제
 		videoFile.delete();
 		thumbnailFile.delete();
+		
+		// DB에서 삭제
 		repo.deleteVideo(id);
 		%> 
 			alert('삭제가 완료되었습니다');

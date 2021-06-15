@@ -4,8 +4,10 @@
 	request.setCharacterEncoding("utf-8");
 	
 	Video video = new Video();
+	// POST 요청만 받음
 	if (request.getMethod().equals("POST")){
 		VideoRepo videoRepo = new VideoRepo();
+		// 글 정보 로드
 		video = videoRepo.selectOneVideoById(Integer.parseInt(request.getParameter("id")));
 		
 		videoRepo.close();
